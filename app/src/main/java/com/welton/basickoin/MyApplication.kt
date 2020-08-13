@@ -2,6 +2,7 @@ package com.welton.basickoin
 
 import android.app.Application
 import com.welton.basickoin.di.appModule
+import com.welton.basickoin.scope.moduleScopeSession
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -12,7 +13,9 @@ class MyApplication : Application() {
 
         startKoin {
             androidContext(this@MyApplication)
-            modules(appModule)
+            modules(appModule, moduleScopeSession)
         }
+
+
     }
 }

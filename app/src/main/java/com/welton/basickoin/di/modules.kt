@@ -11,6 +11,7 @@ val appModule = module {
     factory { UserLocalDataSource() }
     factory { UserRemoteDataSource(get()) }
 
-    viewModel { LoginViewModel(get ())}
+    viewModel { LoginViewModel(get()) }
+    viewModel { (id: Int, name: String) -> ParametersViewModel(id, name, get()) }
 
 }
